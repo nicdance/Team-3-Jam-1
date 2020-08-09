@@ -19,7 +19,6 @@ public class PlayerCollider : MonoBehaviour
         else if(collision.gameObject.tag == "Health")
         {
             onChangeHealth?.Invoke(1);
-
         }
     }
 }

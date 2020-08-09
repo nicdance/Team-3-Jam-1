@@ -71,7 +71,4 @@ public class HealthManager : MonoBehaviour
             }
         }
     }
-
-
-    // onUnlockHealth?.Invoke(1);
 }
