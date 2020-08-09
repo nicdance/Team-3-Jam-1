@@ -30,6 +30,10 @@ public class HealthManager : MonoBehaviour
     // Unlocks a new heart
     public void UnlockHealth() {
         maxHealth += 1;
+        if (maxHealth >healthBubbles.Length)
+        {
+            maxHealth = healthBubbles.Length;
+        }
         ActivateHealth();
     }
 
