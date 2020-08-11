@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Enemy
   - Health
+  - AddHealth
   layers:
   - Default
   - TransparentFX
