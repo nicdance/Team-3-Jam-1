@@ -65,10 +65,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        Vector3 verticalTargetPosition = targetPosition;
-        verticalTargetPosition.y = transform.position.y;
-        verticalTargetPosition.x = transform.position.x + (hAxis * distance);
-        transform.position = Vector3.MoveTowards(transform.position, verticalTargetPosition, laneChangeSpeed * Time.deltaTime);
+        Vector3 newTargetPosition = targetPosition;
+        newTargetPosition.y = transform.position.y;
+        newTargetPosition.x = transform.position.x + (hAxis * distance);
+        //  transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, laneChangeSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, laneChangeSpeed * Time.deltaTime);
     }
 
     public void ChangeLane(int direction)
@@ -102,6 +103,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             targetPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
 
