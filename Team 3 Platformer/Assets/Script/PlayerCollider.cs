@@ -24,5 +24,24 @@ public class PlayerCollider : MonoBehaviour
         {
             onUnlockHealth?.Invoke();
         }
+
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Enemy")
+            {
+                onChangeHealth?.Invoke(-1);
+            }
+            else if (other.gameObject.tag == "Health")
+            {
+                onChangeHealth?.Invoke(1);
+                other.gameObject.SetActive(false);
+            }
+            else if (other.gameObject.tag == "AddHealth")
+            {
+                onUnlockHealth?.Invoke();
+                other.gameObject.SetActive(false);
+            }
+
+        }
     }
-}
