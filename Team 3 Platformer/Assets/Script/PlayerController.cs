@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using TreeEditor;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     protected const int startingLane = 1;
 
     protected int currentLane = startingLane;
+    protected int previousDirection = 0;
     protected Vector3 targetPosition = Vector3.zero;
     protected Vector3 startingPosition = Vector3.forward;
 
@@ -71,16 +73,22 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeLane(int direction)
     {
-        int targetLane = currentLane + direction;
-
-        // Ignore, we are on the edge lanes.
-        if (targetLane < 0 || targetLane > 2)
+        if (!Physics.Raycast(transform.position,Vector3.forward, 3f))
         {
-            return;
+            previousDirection = direction;
+            int targetLane = currentLane + direction;
+
+            // Ignore, we are on the edge lanes.
+            if (targetLane < 0 || targetLane > 2)
+            {
+                return;
+            }
+
+            currentLane = targetLane;
+            targetPosition = new Vector3(transform.position.x, transform.position.y, (currentLane - 1) * laneOffset);
         }
 
-        currentLane = targetLane;
-        targetPosition = new Vector3(transform.position.x, transform.position.y, (currentLane - 1) * laneOffset);
+
 
     }
 
@@ -89,6 +97,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isgrounded = true;
+        }
+        else
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            targetPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
 
