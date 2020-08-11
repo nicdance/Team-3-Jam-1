@@ -12,11 +12,11 @@ public class PlayerCollider : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("OnCollisionEnter");
-        if (collision.gameObject.tag  == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             onChangeHealth?.Invoke(-1);
         }
-        else if(collision.gameObject.tag == "Health")
+        else if (collision.gameObject.tag == "Health")
         {
             onChangeHealth?.Invoke(1);
         }
@@ -24,7 +24,7 @@ public class PlayerCollider : MonoBehaviour
         {
             onUnlockHealth?.Invoke();
         }
-
+    }
 
         public void OnTriggerEnter(Collider other)
         {
