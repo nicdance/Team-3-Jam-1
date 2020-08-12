@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour
         Vector3 newTargetPosition = targetPosition;
         newTargetPosition.y = transform.position.y;
         newTargetPosition.x = transform.position.x + (hAxis * distance);
-        //  transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, laneChangeSpeed * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, laneChangeSpeed * Time.deltaTime);
+
     }
 
     public void ChangeLane(int direction)
