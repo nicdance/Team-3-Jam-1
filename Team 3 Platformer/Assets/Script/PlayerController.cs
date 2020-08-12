@@ -1,10 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using System.Transactions;
-using TreeEditor;
 using UnityEngine;
-using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
