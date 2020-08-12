@@ -2349,8 +2349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7544749be10596d4eba6376d098cd65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  VerticalSpeed: 20
+  moveSpeed: 7.5
+  VerticalSpeed: 15
   laneChangeSpeed: 15
   jumpSpeed: 5
   isgrounded: 0

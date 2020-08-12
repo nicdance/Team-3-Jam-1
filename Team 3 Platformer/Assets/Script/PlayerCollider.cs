@@ -11,7 +11,6 @@ public class PlayerCollider : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("OnCollisionEnter");
         if (collision.gameObject.tag == "Enemy")
         {
             onChangeHealth?.Invoke(-1);
