@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
+using TreeEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,10 +10,11 @@ public class PlayerController : MonoBehaviour
     public float VerticalSpeed = 20f;
     public float laneChangeSpeed = 30f;
     public float jumpSpeed = 5f;
-    public float fallMultiplier = 2.5f;
     public bool isgrounded = true;
     public float verticalDistance = 2f;
     public float laneOffset = 3f;
+	public bool candoublejump;
+	
 
 
     protected const int startingLane = 1;
@@ -21,8 +23,6 @@ public class PlayerController : MonoBehaviour
     protected int previousDirection = 0;
     protected Vector3 targetPosition = Vector3.zero;
     protected Vector3 startingPosition = Vector3.forward;
-
-    public float xoffset = 0.01f;
 
     //to keep our rigid body
     Rigidbody rb;
@@ -49,17 +49,6 @@ public class PlayerController : MonoBehaviour
 
         // Input on x ("Horizontal")
         float hAxis = Input.GetAxis("Horizontal");
-        //if (hAxis <0 && Physics.Raycast(transform.position, Vector3.left, xoffset))
-        //{
-        //    Debug.Log("Onstacle Left");
-        //    hAxis = 0;
-        //}
-        //else if (hAxis >0 && Physics.Raycast(transform.position, Vector3.right,xoffset))
-        //{
-        //    Debug.Log("Onstacle right");
-        //    hAxis = 0;
-        //}
-
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -73,21 +62,28 @@ public class PlayerController : MonoBehaviour
         {
             if (isgrounded)
             {
-                //rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-                rb.velocity = Vector3.up * jumpSpeed;
+                rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
                 isgrounded = false;
+				candoublejump = true;
             }
-        }
-        if (rb.velocity.y < 0)
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+			else
+			{
+				if (candoublejump) 
+				{
+					candoublejump = false;
+					rb.velocity = new Vector3(0,0,0);
+					rb.AddForce(Vector3.up * jumpSpeed,ForceMode.Impulse);
+					
+					
+				}
+			}
         }
 
         Vector3 newTargetPosition = targetPosition;
         newTargetPosition.y = transform.position.y;
         newTargetPosition.x = transform.position.x + (hAxis * distance);
+        //  transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, laneChangeSpeed * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, newTargetPosition, laneChangeSpeed * Time.deltaTime);
-
     }
 
     public void ChangeLane(int direction)
@@ -120,11 +116,9 @@ public class PlayerController : MonoBehaviour
         else
         if (collision.gameObject.tag == "Obstacle")
         {
-            // targetPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            // transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            targetPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
-
-
 
 }
