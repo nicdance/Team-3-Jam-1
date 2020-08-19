@@ -147,3 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
+  canTakeDamage: 1
+  timeSinceDamage: 0
+  delaybetweenDamage: 1
