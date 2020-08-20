@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/JasonScene.unity
     guid: 0af1c33abe12cf9459d0a87cd176a3fd
   - enabled: 1
-    path: Assets/Scenes/NicoleScene.unity
+    path: Assets/Scenes/FranduScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

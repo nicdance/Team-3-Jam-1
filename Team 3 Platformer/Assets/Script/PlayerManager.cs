@@ -18,7 +18,6 @@ public class PlayerManager : MonoBehaviour
     public static event Action onUnlockHealth;
     public static event Action<int, GameObject> onChangeHealth;
 
-
     public static event Action onUnlockLife;
     public static event Action<int> onChangeLives;
 
