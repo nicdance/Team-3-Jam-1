@@ -52,8 +52,19 @@ public class PlayerManager : MonoBehaviour
         {
             onUnlockHealth?.Invoke();
         }
+        else if (collision.gameObject.tag == "MovingPlatform")
+        {
+            gameObject.transform.parent = collision.transform;
+        }
     }
+    public void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+                gameObject.transform.parent = null;
+        }
 
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")

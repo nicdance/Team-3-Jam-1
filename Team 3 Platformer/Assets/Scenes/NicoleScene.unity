@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543a92f8b01ec714b8fb8758a1e8b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraOffset: {x: 0, y: 1.5, z: 0}
+  cameraOffset: {x: 0, y: 1.5, z: 1}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2371,34 +2371,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1554601452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 972537897724841745, guid: ad88d301f02faca448983641ee667922,
-    type: 3}
-  m_PrefabInstance: {fileID: 972537898611198620}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1554601453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554601452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa473fdd75c36145b1dd106176b69f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  VerticalSpeed: 20
-  laneChangeSpeed: 30
-  jumpSpeed: 5
-  isgrounded: 1
-  verticalDistance: 2
-  laneOffset: 3
-  candoublejump: 0
-  lastHAxis: 0
-  canMove: 1
 --- !u!4 &1563280786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 972537897724841742, guid: ad88d301f02faca448983641ee667922,
@@ -2921,25 +2893,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 972537897724841743, guid: ad88d301f02faca448983641ee667922,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 972537897724841745, guid: ad88d301f02faca448983641ee667922,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 972537897724841746, guid: ad88d301f02faca448983641ee667922,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 972537897724841746, guid: ad88d301f02faca448983641ee667922,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad88d301f02faca448983641ee667922, type: 3}
