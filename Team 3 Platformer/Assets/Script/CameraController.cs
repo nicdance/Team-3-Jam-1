@@ -19,9 +19,9 @@ public class CameraController : MonoBehaviour
 	void Update ()
 	{
 		Vector3 camfollowpos = setCamfollowposFunc();
-		camfollowpos.z = transform.position.z;
 		camfollowpos += cameraOffset;
-		
+		camfollowpos.z = transform.position.z;
+
 		Vector3 camdirmov = (camfollowpos - transform.position).normalized;
 		float distance = Vector3.Distance(camfollowpos, transform.position);
 		float cammovspd = 2f;
