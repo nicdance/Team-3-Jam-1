@@ -88,11 +88,15 @@ public class PlayerManager : MonoBehaviour
         }
         else if (other.gameObject.tag == "SpawnPoint")
         {
-           spawnPoint = other.transform;
+            spawnPoint = other.transform;
+        }
+        else if (other.gameObject.tag == "InstantDeath")
+        {
+            onChangeHealth?.Invoke(-10,null);
         }
     }
 
     public void ResetPlayer() {
-        transform.position = spawnPoint.position;
+        transform.position = spawnPoint.position;// + spawnPoint.parent.position;
     }
 }

@@ -11,6 +11,8 @@ TagManager:
   - AddHealth
   - SpawnPoint
   - BackgroundStone
+  - MovingPlatform
+  - InstantDeath
   layers:
   - Default
   - TransparentFX

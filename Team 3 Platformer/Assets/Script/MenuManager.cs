@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("JasonScene 2 (working cam)");
     }
     public void MainMenu()
     {

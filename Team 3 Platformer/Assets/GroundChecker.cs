@@ -8,7 +8,6 @@ public class GroundChecker : MonoBehaviour
     protected NicolePlayerController controller;
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("gorund checker hit ground");
         controller.SetAsGrounded();
     }
 }

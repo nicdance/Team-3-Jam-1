@@ -98,7 +98,10 @@ public class NicolePlayerController : MonoBehaviour
            canMove = true;
             lastHAxis = hAxis;
         }
-        
+        //if (hAxis ==-1)
+        //{
+        //    gameObject.transform.rotation
+        //}
         if (Input.GetKeyDown(KeyCode.W))
         {
             ChangeLane(1);

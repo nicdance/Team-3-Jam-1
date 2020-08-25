@@ -142,11 +142,17 @@ public class HealthManager : MonoBehaviour
     }
 
     // Unlocks a new heart
-    public void UnlockHealth() {
+    public void UnlockHealth()
+    {
         maxHealth += 1;
-        if (maxHealth >healthBubbles.Length)
+        currentHealth += 1;
+        if (maxHealth > healthBubbles.Length)
         {
             maxHealth = healthBubbles.Length;
+        }
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
         ActivateHealth();
     }
