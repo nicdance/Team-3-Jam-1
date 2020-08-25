@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	
+	[SerializeField]
+	protected Vector3 cameraOffset = Vector3.zero;
+
     private Func<Vector3> setCamfollowposFunc;
 	
 	public void Setup(Func<Vector3> setCamfollowposFunc)
@@ -18,6 +20,7 @@ public class CameraController : MonoBehaviour
 	{
 		Vector3 camfollowpos = setCamfollowposFunc();
 		camfollowpos.z = transform.position.z;
+		camfollowpos += cameraOffset;
 		
 		Vector3 camdirmov = (camfollowpos - transform.position).normalized;
 		float distance = Vector3.Distance(camfollowpos, transform.position);
