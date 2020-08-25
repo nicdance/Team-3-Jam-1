@@ -10,6 +10,7 @@ TagManager:
   - Health
   - AddHealth
   - SpawnPoint
+  - BackgroundStone
   layers:
   - Default
   - TransparentFX
