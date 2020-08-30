@@ -7,8 +7,9 @@ public class CameraController : MonoBehaviour
 {
 	[SerializeField]
 	protected Vector3 cameraOffset = Vector3.zero;
-
-    private Func<Vector3> setCamfollowposFunc;
+	[SerializeField]
+	protected float cameraMoveSpeed = 2f;
+	private Func<Vector3> setCamfollowposFunc;
 	
 	public void Setup(Func<Vector3> setCamfollowposFunc)
 	{
@@ -24,11 +25,11 @@ public class CameraController : MonoBehaviour
 
 		Vector3 camdirmov = (camfollowpos - transform.position).normalized;
 		float distance = Vector3.Distance(camfollowpos, transform.position);
-		float cammovspd = 2f;
+		
 		
 		if (distance > 0) 
 		{
-			Vector3 newCamPos = transform.position + camdirmov * distance * cammovspd * Time.deltaTime;
+			Vector3 newCamPos = transform.position + camdirmov * distance * cameraMoveSpeed * Time.deltaTime;
 			
 			float distaftermoving = Vector3.Distance(newCamPos,camfollowpos);
 			
