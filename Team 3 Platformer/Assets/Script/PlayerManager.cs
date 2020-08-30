@@ -97,6 +97,40 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void ResetPlayer() {
-        transform.position = spawnPoint.position;// + spawnPoint.parent.position;
+        StartCoroutine(Fade());
+//        transform.position = spawnPoint.position;// + spawnPoint.parent.position;
+
+//        GameManager.instance.cameraStart.SetupCamera();
     }
+
+    IEnumerator Fade()
+    {
+        float alpha = 1;
+        float increment = .001f;
+        float delay = 2.1f;
+        for (float ft = 0f; ft < alpha; ft += increment)
+        {
+            Debug.Log(ft);
+            Color c = GameManager.instance.fadePanel.color;
+            c.a = ft;
+            GameManager.instance.fadePanel.color = c;
+            yield return null;
+        }
+        transform.position = spawnPoint.position;// + spawnPoint.parent.position;
+
+        GameManager.instance.cameraStart.SetupCamera();
+
+
+        yield return new WaitForSeconds(delay);
+
+        for (float ft = alpha; ft > 0; ft -= increment)
+        {
+            Debug.Log(ft);
+            Color c = GameManager.instance.fadePanel.color;
+            c.a = ft;
+            GameManager.instance.fadePanel.color = c;
+            yield return null;
+        }
+    }
+
 }

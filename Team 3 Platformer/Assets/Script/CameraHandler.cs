@@ -16,4 +16,11 @@ public class CameraHandler : MonoBehaviour
 		
     }
 
+
+    public void SetupCamera() {
+
+        cameracontroller.Setup(() => PlayerTransform.position);
+    }
+
+
 }
