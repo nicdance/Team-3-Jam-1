@@ -51,8 +51,8 @@ public class HealthManager : MonoBehaviour
     }
     public void ResetHealth()
     {
-        currentHealth = startingHealth;
-        maxHealth = startingHealth;
+        currentHealth = maxHealth;
+        maxHealth = maxHealth;
         ActivateHealth();
     }
 
@@ -83,7 +83,7 @@ public class HealthManager : MonoBehaviour
     // Unlocks a new Life
     public void UnlockLife()
     {
-        maxHealth += 1;
+        maxLives += 1;
         if (maxLives > lives.Length)
         {
             maxLives = lives.Length;
