@@ -21,9 +21,13 @@ public class PlayerManager : MonoBehaviour
     public static event Action onUnlockLife;
     public static event Action<int> onChangeLives;
 
+    [SerializeField]
+    protected NicolePlayerController playerController;
+
 
     public void Start()
     {
+        playerController= gameObject.GetComponent<NicolePlayerController>();
         gameObject.transform.position = spawnPoint.position;
         HealthManager.onPlayerLostLife += ResetPlayer;
     }
@@ -106,11 +110,10 @@ public class PlayerManager : MonoBehaviour
     IEnumerator Fade()
     {
         float alpha = 1;
-        float increment = .001f;
+        float increment = .002f;
         float delay = 2.1f;
         for (float ft = 0f; ft < alpha; ft += increment)
         {
-            Debug.Log(ft);
             Color c = GameManager.instance.fadePanel.color;
             c.a = ft;
             GameManager.instance.fadePanel.color = c;
@@ -120,8 +123,8 @@ public class PlayerManager : MonoBehaviour
 
         GameManager.instance.cameraStart.SetupCamera();
 
-
         yield return new WaitForSeconds(delay);
+        playerController.isAlive = true;
 
         for (float ft = alpha; ft > 0; ft -= increment)
         {

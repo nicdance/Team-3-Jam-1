@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     protected Vector3 startingPosition = Vector3.forward;
 
     //to keep our rigid body
-    Rigidbody rb;
+    public Rigidbody rb;
 
 
     // Use this for initialization

@@ -6,22 +6,57 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 	[SerializeField]
-	protected Vector3 cameraOffset = Vector3.zero;
+	protected Vector3 currentCameraOffset = Vector3.zero;
+	[Header("Start Camera Settings")]
+	[SerializeField]
+	protected Vector3 startCameraOffset = Vector3.zero;
+	[SerializeField]
+	protected float zoomedInPosition;
+	[Header("Zoomed Camera Settings")]
+	[SerializeField]
+	protected Vector3 zoomCameraOffset = Vector3.zero;
+	[SerializeField]
+	protected float zoomedOutPosition;
+
+
+	[Header("other Camera Settings")]
 	[SerializeField]
 	protected float cameraMoveSpeed = 2f;
+	[SerializeField]
 	private Func<Vector3> setCamfollowposFunc;
-	
-	public void Setup(Func<Vector3> setCamfollowposFunc)
+	protected float currentZ;
+    public void Start()
+    {
+
+		NicolePlayerController.onZoomCamera += ToggleZoom;
+	}
+
+    public void Setup(Func<Vector3> setCamfollowposFunc)
 	{
 		this.setCamfollowposFunc = setCamfollowposFunc;
-	
+		currentCameraOffset = startCameraOffset;
+		currentZ = zoomedOutPosition;
 	}
-	
+
+	public void ToggleZoom() {
+		float zPosition = transform.position.z;
+		if (zPosition <= zoomedOutPosition+1)
+        {
+			currentZ = zoomedInPosition;
+			currentCameraOffset = zoomCameraOffset;
+		}
+		else
+		{
+			currentZ = zoomedOutPosition;
+			currentCameraOffset = startCameraOffset;
+		}
+	//	transform.position = new Vector3(transform.position.x, transform.position.y, zPosition);
+	}
 	void Update ()
 	{
 		Vector3 camfollowpos = setCamfollowposFunc();
-		camfollowpos += cameraOffset;
-		camfollowpos.z = transform.position.z;
+		camfollowpos += currentCameraOffset;
+		camfollowpos.z = currentZ;
 
 		Vector3 camdirmov = (camfollowpos - transform.position).normalized;
 		float distance = Vector3.Distance(camfollowpos, transform.position);

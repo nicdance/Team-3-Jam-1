@@ -13,6 +13,7 @@ TagManager:
   - BackgroundStone
   - MovingPlatform
   - InstantDeath
+  - Bounce
   layers:
   - Default
   - TransparentFX
