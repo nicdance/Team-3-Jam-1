@@ -7,16 +7,16 @@ public class CameraController : MonoBehaviour
 {
 	[SerializeField]
 	protected Vector3 currentCameraOffset = Vector3.zero;
-	[Header("Start Camera Settings")]
+	[Header("Zoomed Out Settings")]
 	[SerializeField]
 	protected Vector3 startCameraOffset = Vector3.zero;
 	[SerializeField]
-	protected float zoomedInPosition;
-	[Header("Zoomed Camera Settings")]
+	protected float zoomedOutPosition;
+	[Header("Zoomed In Settings")]
 	[SerializeField]
 	protected Vector3 zoomCameraOffset = Vector3.zero;
 	[SerializeField]
-	protected float zoomedOutPosition;
+	protected float zoomedInPosition;
 
 
 	[Header("other Camera Settings")]

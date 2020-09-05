@@ -9,11 +9,12 @@ using UnityEngine;
 
 public class NicolePlayerController : MonoBehaviour
 {
-
+    [SerializeField]
+    protected Animator animator;
+    public GameObject character;
     public static event Action<int, GameObject> onChangeHealth;
     public static event Action onZoomCamera;
 
-    public GameObject character;
 
     public float moveSpeed = 8f;
     public float VerticalSpeed = 20f;
@@ -83,19 +84,32 @@ public class NicolePlayerController : MonoBehaviour
             // Input on x ("Horizontal")
             float hAxis = Input.GetAxisRaw("Horizontal");
 
+            if (hAxis != 0)
+            {
+                Vector3 direction = -(Vector3.forward * hAxis);// as the key is held down the h or v values will move toward full -1 or 1, thus handling the smooth rotation
+                character.transform.rotation = Quaternion.LookRotation(direction);
+
+            }
+            else {
+                Vector3 direction = -(Vector3.forward);// as the key is held down the h or v values will move toward full -1 or 1, thus handling the smooth rotation
+                character.transform.rotation = Quaternion.LookRotation(direction);
+            }
+
             if (hAxis > 0)
             {
                 rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);
-
+                animator.SetBool("Walk", true);
             }
             else if (hAxis < 0)
             {
                 rb.AddForce(transform.forward * -moveSpeed, ForceMode.Impulse);
+                animator.SetBool("Walk", true);
 
             }
             else
             {
                 rb.AddForce(transform.forward * 0f);
+                animator.SetBool("Walk", false);
             }
 
             if (Input.GetKeyDown(KeyCode.W))
@@ -115,6 +129,7 @@ public class NicolePlayerController : MonoBehaviour
                     rb.velocity = Vector3.up * jumpSpeed;
                     isgrounded = false;
                     candoublejump = true;
+                    animator.SetBool("Jump", true);
                 }
                 else
                 {
@@ -199,6 +214,8 @@ public class NicolePlayerController : MonoBehaviour
     public void SetAsGrounded() {
         isgrounded = true;
         isFalling = false;
+
+        animator.SetBool("Jump", false);
     }
 
     public void ChangeLane(int direction)
