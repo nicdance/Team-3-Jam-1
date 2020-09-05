@@ -47,7 +47,7 @@ public class HealthManager : MonoBehaviour
         PlayerManager.onUnlockLife += UnlockLife;
         PlayerManager.onChangeLives += ChangeLives;
 
-        NicolePlayerController.onChangeHealth += ChangeHealth;
+        PlayerController.onChangeHealth += ChangeHealth;
     }
     public void ResetHealth()
     {

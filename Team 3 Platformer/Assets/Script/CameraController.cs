@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour
     public void Start()
     {
 
-		NicolePlayerController.onZoomCamera += ToggleZoom;
+		PlayerController.onZoomCamera += ToggleZoom;
 	}
 
     public void Setup(Func<Vector3> setCamfollowposFunc)

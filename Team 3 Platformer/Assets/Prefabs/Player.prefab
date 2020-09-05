@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9edaaf7175bf7f34cad646ac5d81a5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1554601453}
+  controller: {fileID: 972537897724841743}
 --- !u!135 &1919096364
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 972537897724841746}
   - component: {fileID: 972537897724841743}
   - component: {fileID: 1563280788}
-  - component: {fileID: 1554601453}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -213,47 +212,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972537897724841745}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7544749be10596d4eba6376d098cd65e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  VerticalSpeed: 15
-  laneChangeSpeed: 10
-  jumpSpeed: 7
-  isgrounded: 0
-  verticalDistance: 5
-  laneOffset: 2
-  candoublejump: 0
-  rb: {fileID: 0}
---- !u!114 &1563280788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972537897724841745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e14f6fb708ae140aa2fa2242065b7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
-  canTakeDamage: 1
-  timeSinceDamage: 0
-  delaybetweenDamage: 3
-  playerController: {fileID: 0}
---- !u!114 &1554601453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972537897724841745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aa473fdd75c36145b1dd106176b69f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 562544124}
@@ -273,6 +234,23 @@ MonoBehaviour:
   canMove: 1
   isAlive: 1
   rb: {fileID: 0}
+--- !u!114 &1563280788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972537897724841745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e14f6fb708ae140aa2fa2242065b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 0}
+  canTakeDamage: 1
+  timeSinceDamage: 0
+  delaybetweenDamage: 3
+  playerController: {fileID: 972537897724841743}
 --- !u!1 &2411448881096629895
 GameObject:
   m_ObjectHideFlags: 0

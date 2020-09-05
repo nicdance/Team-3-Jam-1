@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     [SerializeField]
-    protected NicolePlayerController controller;
+    protected PlayerController controller;
     public void OnTriggerEnter(Collider other)
     {
         controller.SetAsGrounded();

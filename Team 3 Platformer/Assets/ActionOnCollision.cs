@@ -14,7 +14,7 @@ public class ActionOnCollision : MonoBehaviour
         STEAMPOWERED                    
     }
 
-    public void PerformAction(NicolePlayerController player) {
+    public void PerformAction(PlayerController player) {
         player.rb.AddForce(Vector3.up * modifier, ForceMode.Impulse);
     }
 }

@@ -22,12 +22,12 @@ public class PlayerManager : MonoBehaviour
     public static event Action<int> onChangeLives;
 
     [SerializeField]
-    protected NicolePlayerController playerController;
+    protected PlayerController playerController;
 
 
     public void Start()
     {
-        playerController= gameObject.GetComponent<NicolePlayerController>();
+        playerController= gameObject.GetComponent<PlayerController>();
         gameObject.transform.position = spawnPoint.position;
         HealthManager.onPlayerLostLife += ResetPlayer;
     }
