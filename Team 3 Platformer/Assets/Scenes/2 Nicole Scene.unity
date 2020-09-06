@@ -8256,7 +8256,7 @@ MonoBehaviour:
   - {fileID: 2092153148}
   - {fileID: 488285255}
   - {fileID: 479947998}
-  startingHealth: 5
+  startingHealth: 1
   currentHealth: 0
   maxHealth: 0
   lives:
