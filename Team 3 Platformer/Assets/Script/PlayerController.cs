@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
 
     bool isMovingLanes = false;
+
+    [SerializeField]
+    protected float lastDirection = 1;
     // Use this for initialization
     void Start()
     {
@@ -97,11 +100,12 @@ public class PlayerController : MonoBehaviour
             {
                 Vector3 direction = -(Vector3.forward * hAxis);// as the key is held down the h or v values will move toward full -1 or 1, thus handling the smooth rotation
                 character.transform.rotation = Quaternion.LookRotation(direction);
+                lastDirection = hAxis;
 
             }
             else
             {
-                Vector3 direction = -(Vector3.forward);// as the key is held down the h or v values will move toward full -1 or 1, thus handling the smooth rotation
+                Vector3 direction = -(Vector3.forward * lastDirection );// as the key is held down the h or v values will move toward full -1 or 1, thus handling the smooth rotation
                 character.transform.rotation = Quaternion.LookRotation(direction);
             }
 
@@ -162,7 +166,7 @@ public class PlayerController : MonoBehaviour
                     startFallPosition = transform.position;
                     isFalling = true;
                 }
-                if (isFalling && startFallPosition.y - System.Math.Abs(transform.position.y) <= -10)
+                if (!isgrounded && isFalling && startFallPosition.y - System.Math.Abs(transform.position.y) <= -10)
                 {
                     onChangeHealth?.Invoke(-10, null);
                 }
