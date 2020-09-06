@@ -124,7 +124,9 @@ public class PlayerManager : MonoBehaviour
         GameManager.instance.cameraStart.SetupCamera();
 
         yield return new WaitForSeconds(delay);
-        playerController.isAlive = true;
+        /////////
+        //playerController.isAlive = true;
+        playerController.PlayerAlive();
 
         for (float ft = alpha; ft > 0; ft -= increment)
         {

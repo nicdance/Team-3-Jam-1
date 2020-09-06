@@ -61,6 +61,14 @@ public class PlayerController : MonoBehaviour
     public void PlayerDied()
     {
         isAlive = false;
+        animator.SetBool("isDead", true);
+    }
+
+
+    public void PlayerAlive()
+    {
+        isAlive = true;
+        animator.SetBool("isDead", false);
     }
 
     // Update is called once per frame
