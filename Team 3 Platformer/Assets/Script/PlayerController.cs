@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (isgrounded)
                 {
+                    isFalling = false;
                     //rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
                     rb.velocity = Vector3.up * jumpSpeed;
                     isgrounded = false;
@@ -149,6 +150,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if (candoublejump)
                     {
+                        isFalling = false;
                         candoublejump = false;
                         //rb.velocity = new Vector3(0, 0, 0);
                         //rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
@@ -169,6 +171,7 @@ public class PlayerController : MonoBehaviour
                 if (!isgrounded && isFalling && startFallPosition.y - System.Math.Abs(transform.position.y) <= -10)
                 {
                     onChangeHealth?.Invoke(-10, null);
+                    isFalling = false;
                 }
             }
 
@@ -231,6 +234,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isgrounded = true;
+            isFalling = false;
         }
 
         else
