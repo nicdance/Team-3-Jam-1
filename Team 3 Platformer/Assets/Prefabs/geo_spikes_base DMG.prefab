@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 2754590496876625924}
   m_Layer: 0
   m_Name: geo_spikes_base DMG
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ Animator:
   m_GameObject: {fileID: 2754590496876625925}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 43b97d2642d556346ae1e4b0f05138c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5d674d82126f3ed4da26d4060116c6ef, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -284,7 +284,7 @@ BoxCollider:
   m_GameObject: {fileID: 2754590496876625925}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 165.26758, y: 67.88065, z: 165.2666}
   m_Center: {x: 0, y: -27.735626, z: 0.00024437904}
