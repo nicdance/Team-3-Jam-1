@@ -6931,7 +6931,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.010000002, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1305804958}
-  m_RootOrder: 94
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 180.00002}
 --- !u!1001 &268449322
 PrefabInstance:
@@ -8256,7 +8256,7 @@ MonoBehaviour:
   - {fileID: 2092153148}
   - {fileID: 488285255}
   - {fileID: 479947998}
-  startingHealth: 1
+  startingHealth: 5
   currentHealth: 0
   maxHealth: 0
   lives:
@@ -11777,6 +11777,7 @@ Transform:
   - {fileID: 1984805759}
   - {fileID: 908990012}
   - {fileID: 2130365732322046519}
+  - {fileID: 237744263}
   - {fileID: 1080443357}
   - {fileID: 738396148}
   - {fileID: 419252832}
@@ -11799,14 +11800,13 @@ Transform:
   - {fileID: 5921897580140625916}
   - {fileID: 1109357071}
   - {fileID: 1889563081}
-  - {fileID: 237744263}
   - {fileID: 1196347217}
-  - {fileID: 522841353}
   - {fileID: 1797251996}
+  - {fileID: 522841353}
   - {fileID: 460686278}
   - {fileID: 98570659}
-  - {fileID: 512484452}
   - {fileID: 4150068916728135270}
+  - {fileID: 512484452}
   - {fileID: 1849021248}
   - {fileID: 1667833764}
   - {fileID: 2017325454}
@@ -18127,7 +18127,7 @@ Transform:
   m_LocalScale: {x: 0.009999999, y: 0.01, z: 0.009999999}
   m_Children: []
   m_Father: {fileID: 1305804958}
-  m_RootOrder: 97
+  m_RootOrder: 96
   m_LocalEulerAnglesHint: {x: 0, y: -57.236004, z: 360}
 --- !u!1001 &1797897885
 PrefabInstance:
@@ -24781,7 +24781,7 @@ Transform:
   m_LocalScale: {x: 2.4821005, y: 2.4820998, z: 2.4821}
   m_Children: []
   m_Father: {fileID: 1305804958}
-  m_RootOrder: 101
+  m_RootOrder: 100
   m_LocalEulerAnglesHint: {x: 9.199, y: -49.112003, z: 7.5280004}
 --- !u!1 &4156034441468699023
 GameObject:
