@@ -30,6 +30,7 @@ public class PlayerManager : MonoBehaviour
         playerController= gameObject.GetComponent<PlayerController>();
         gameObject.transform.position = spawnPoint.position;
         HealthManager.onPlayerLostLife += ResetPlayer;
+        
     }
     public void Update()
     {
@@ -98,13 +99,20 @@ public class PlayerManager : MonoBehaviour
         {
             onChangeHealth?.Invoke(-10,null);
         }
+        else if (other.gameObject.tag == "Checkpoint")
+        {
+            spawnPoint = other.transform;
+            other.gameObject.GetComponent<CheckPoint>().SetCollected();
+        }
+        else if (other.gameObject.tag == "Boots")
+        {
+            other.gameObject.SetActive(false);
+            playerController.candoublejump = true;
+        }
     }
 
     public void ResetPlayer() {
         StartCoroutine(Fade());
-//        transform.position = spawnPoint.position;// + spawnPoint.parent.position;
-
-//        GameManager.instance.cameraStart.SetupCamera();
     }
 
     IEnumerator Fade()

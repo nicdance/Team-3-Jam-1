@@ -15,6 +15,7 @@ TagManager:
   - InstantDeath
   - Bounce
   - Checkpoint
+  - Boots
   layers:
   - Default
   - TransparentFX
