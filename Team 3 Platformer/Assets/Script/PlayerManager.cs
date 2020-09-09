@@ -124,7 +124,7 @@ public class PlayerManager : MonoBehaviour
     IEnumerator Fade()
     {
         float alpha = 1;
-        float increment = .002f;
+        float increment = Time.deltaTime;
         float delay = 2.1f;
         for (float ft = 0f; ft < alpha; ft += increment)
         {
