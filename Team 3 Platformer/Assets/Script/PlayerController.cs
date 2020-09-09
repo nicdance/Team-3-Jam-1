@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public float laneOffset = 3f;
     public bool candoublejump;
 
+    public bool isDoubleJumpOnlocked = false;
+
     public float fallMultiplier = 2.5f;
 
 
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour
         //get the rigid body component for later use
         rb = GetComponent<Rigidbody>();
         HealthManager.onPlayerLostLife += PlayerDied;
-        candoublejump = GameManager.instance.GetDoubleJump();
+        isDoubleJumpOnlocked = GameManager.instance.GetDoubleJump();
     }
 
     public void PlayerDied()
@@ -162,7 +164,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    if (candoublejump)
+                    if (candoublejump && isDoubleJumpOnlocked)
                     {
                         isFalling = false;
                         candoublejump = false;

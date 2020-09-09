@@ -112,7 +112,7 @@ public class PlayerManager : MonoBehaviour
         else if (other.gameObject.tag == "Boots")
         {
             other.gameObject.SetActive(false);
-            playerController.candoublejump = true;
+            playerController.isDoubleJumpOnlocked = true;
             GameManager.instance.SetDoubleJump(true);
         }
     }
