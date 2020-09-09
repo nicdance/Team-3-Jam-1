@@ -74,19 +74,17 @@ public class PlayerController : MonoBehaviour
     {
         isAlive = true;
         animator.SetBool("isDead", false);
-        switch (spawn.z)
+        if (spawn.z > 0)
         {
-            case 2:
-                currentLane = 2;
-                break;
-            case -2:
-                currentLane = 0;
-                break;
-            case 0:
-                currentLane = 1;
-                break;
-            default:
-                break;
+            currentLane = 2;
+        }
+        else if (spawn.z < 0)
+        {
+            currentLane = 0;
+        }
+        else
+        {
+            currentLane = 1;
         }
         targetPosition = new Vector3(transform.position.x, transform.position.y, (currentLane - 1) * laneOffset);
     }
