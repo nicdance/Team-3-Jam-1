@@ -74,8 +74,6 @@ public class PlayerController : MonoBehaviour
     {
         isAlive = true;
         animator.SetBool("isDead", false);
-        int lane = (int)(spawn.z / 2);
-        Debug.Log(spawn.z);
         switch (spawn.z)
         {
             case 2:
