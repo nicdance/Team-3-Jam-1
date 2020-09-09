@@ -7,7 +7,8 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("JasonScene 2 (working cam)");
+        GameManager.instance.SetDoubleJump(false);
+        SceneManager.LoadScene("Level 1 (Jason3)");
     }
     public void MainMenu()
     {
