@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 353dcb5ca065a274eb27556b77d2e2bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JasonScene 2 (working cam).unity
     guid: 614b7f1002701a948952ee59246a101a
   - enabled: 0
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FranduScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level 1 (Jason3).unity
+    guid: 4f9b94075ffb5b647aa8e1671eba4c60
   m_configObjects: {}
