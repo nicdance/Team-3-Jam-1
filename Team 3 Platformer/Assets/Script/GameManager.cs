@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverMenu;
     public void GameOver() {
         gameOverMenu.SetActive(true);
+        SetDoubleJump(false) ;
     }
 
     public void SetDoubleJump(bool state) {
