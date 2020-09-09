@@ -17,5 +17,13 @@ public class MenuManager : MonoBehaviour
 
     public void Quit() {
         Application.Quit();
-    } 
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+    }
 }
