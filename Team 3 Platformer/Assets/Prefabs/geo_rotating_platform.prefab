@@ -43,7 +43,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e957392681c219d45ba5a0bdb1bc921b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -261,7 +261,7 @@ Transform:
   - {fileID: 6666442325517245327}
   m_Father: {fileID: 2221356317512437879}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -50.457382, y: 0, z: 0}
 --- !u!33 &734944092122027544
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3849350988604846465}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.457382, y: 0, z: 0}
 --- !u!33 &7100651954533368590
 MeshFilter:
   m_ObjectHideFlags: 0
