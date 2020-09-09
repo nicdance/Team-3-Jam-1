@@ -127,12 +127,12 @@ public class PlayerController : MonoBehaviour
 
             if (hAxis > 0)
             {
-                rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);
+                rb.AddForce(transform.forward * moveSpeed*Time.deltaTime*150, ForceMode.Impulse);
                 animator.SetBool("Walk", true);
             }
             else if (hAxis < 0)
             {
-                rb.AddForce(transform.forward * -moveSpeed, ForceMode.Impulse);
+                rb.AddForce(transform.forward * -moveSpeed * Time.deltaTime*150, ForceMode.Impulse);
                 animator.SetBool("Walk", true);
 
             }
