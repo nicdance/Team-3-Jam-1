@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2559967787388157659}
   - component: {fileID: 7298731043572620185}
   - component: {fileID: 7298731043572620182}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: geo_health_slug_anim
   m_TagString: Health
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 76373906598974532}
   - component: {fileID: 4003482077652038658}
   - component: {fileID: 346236575967781501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System health slug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4882,7 +4882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4114680850103313888}
   - component: {fileID: 4110676340780678077}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: worm slimy sfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}

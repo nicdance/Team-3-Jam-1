@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5198132984805788886}
   - component: {fileID: 478418157018935340}
   - component: {fileID: 4329709220472122736}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Particle System health slug '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 7417833102224877036}
   - component: {fileID: 4689822461664923942}
   - component: {fileID: 7946982777876009001}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: geo_health_slug no anim
   m_TagString: Health
   m_Icon: {fileID: 0}

@@ -76,11 +76,12 @@ public class PlayerController : MonoBehaviour
     {
         isAlive = true;
         animator.SetBool("isDead", false);
-        if (spawn.z > 0)
+        Debug.Log(spawn.z);
+        if (spawn.z > 1)
         {
             currentLane = 2;
         }
-        else if (spawn.z < 0)
+        else if (spawn.z < 1)
         {
             currentLane = 0;
         }
@@ -218,7 +219,7 @@ public class PlayerController : MonoBehaviour
         }
         Debug.DrawRay(transform.position, checkDirection, Color.red, 3f);
 
-        if (!Physics.Raycast(transform.position, checkDirection, 3f))
+        if (!Physics.Raycast(transform.position, checkDirection, 3f, 10, QueryTriggerInteraction.Ignore))
         {
             previousDirection = direction;
             int targetLane = currentLane + direction;

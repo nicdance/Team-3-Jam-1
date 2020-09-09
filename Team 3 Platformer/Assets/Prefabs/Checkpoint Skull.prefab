@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1111247322565871830}
   - component: {fileID: 4090440644549117811}
   - component: {fileID: 2243035958473356217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: geo_checkpoint_collected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 8390991520192668300}
   - component: {fileID: 8390991520192668301}
   - component: {fileID: 161949326}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Checkpoint Skull
   m_TagString: Checkpoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 4924590246961132304}
   - component: {fileID: 7184191336531642330}
   - component: {fileID: 8697475097860498960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: geo_checkpoint_idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
