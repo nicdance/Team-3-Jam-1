@@ -70,16 +70,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void PlayerAlive(Vector3 spawn)
+    public void PlayerAlive(float zPos)
     {
         isAlive = true;
         animator.SetBool("isDead", false);
-        Debug.Log(spawn.z);
-        if (spawn.z > 1)
+        Debug.Log(zPos);
+        if (zPos > 1)
         {
             currentLane = 2;
         }
-        else if (spawn.z < 1)
+        else if (zPos < 1)
         {
             currentLane = 0;
         }

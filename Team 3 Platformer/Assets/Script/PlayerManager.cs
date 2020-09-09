@@ -140,7 +140,7 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         /////////
         //playerController.isAlive = true;
-        playerController.PlayerAlive(spawnPoint.position);
+        playerController.PlayerAlive(spawnPoint.position.z);
 
         for (float ft = alpha; ft > 0; ft -= increment)
         {
