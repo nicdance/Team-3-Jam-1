@@ -113,6 +113,7 @@ public class PlayerManager : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             playerController.candoublejump = true;
+            GameManager.instance.SetDoubleJump(true);
         }
     }
 
