@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         //get the rigid body component for later use
         rb = GetComponent<Rigidbody>();
         HealthManager.onPlayerLostLife += PlayerDied;
+        candoublejump = GameManager.instance.GetDoubleJump();
     }
 
     public void PlayerDied()
@@ -140,7 +141,6 @@ public class PlayerController : MonoBehaviour
                 if (isgrounded)
                 {
                     isFalling = false;
-                    //rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
                     rb.velocity = Vector3.up * jumpSpeed;
                     isgrounded = false;
                     candoublejump = true;
@@ -152,8 +152,6 @@ public class PlayerController : MonoBehaviour
                     {
                         isFalling = false;
                         candoublejump = false;
-                        //rb.velocity = new Vector3(0, 0, 0);
-                        //rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
                         rb.velocity = Vector3.up * doubleJumpModifier;
 
                     }

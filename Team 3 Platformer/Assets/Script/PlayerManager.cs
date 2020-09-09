@@ -86,6 +86,11 @@ public class PlayerManager : MonoBehaviour
             onChangeHealth?.Invoke(1, other.gameObject);
             //   other.gameObject.SetActive(false);
         }
+        else if (other.gameObject.tag == "FullHealth")
+        {
+            onChangeHealth?.Invoke(10, other.gameObject);
+            //   other.gameObject.SetActive(false);
+        }        
         else if (other.gameObject.tag == "AddHealth")
         {
             onUnlockHealth?.Invoke();
