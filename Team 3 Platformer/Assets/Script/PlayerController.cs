@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public float fallMultiplier = 2.5f;
 
 
+    [SerializeField]
     protected const int startingLane = 1;
 
     protected int currentLane = startingLane;
@@ -69,10 +70,27 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void PlayerAlive()
+    public void PlayerAlive(Vector3 spawn)
     {
         isAlive = true;
         animator.SetBool("isDead", false);
+        int lane = (int)(spawn.z / 2);
+        Debug.Log(spawn.z);
+        switch (spawn.z)
+        {
+            case 2:
+                currentLane = 2;
+                break;
+            case -2:
+                currentLane = 0;
+                break;
+            case 0:
+                currentLane = 1;
+                break;
+            default:
+                break;
+        }
+        targetPosition = new Vector3(transform.position.x, transform.position.y, (currentLane - 1) * laneOffset);
     }
 
     // Update is called once per frame

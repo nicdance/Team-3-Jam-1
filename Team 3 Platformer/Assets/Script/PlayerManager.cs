@@ -140,11 +140,10 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         /////////
         //playerController.isAlive = true;
-        playerController.PlayerAlive();
+        playerController.PlayerAlive(spawnPoint.position);
 
         for (float ft = alpha; ft > 0; ft -= increment)
         {
-            Debug.Log(ft);
             Color c = GameManager.instance.fadePanel.color;
             c.a = ft;
             GameManager.instance.fadePanel.color = c;
